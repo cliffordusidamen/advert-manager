@@ -15,4 +15,16 @@ class AdvertCampaign extends Model
      * @var array
      */
     protected $guarded = [];
+
+    /**
+     * Fields to be casted as dates
+     * 
+     * @var array
+     */
+    protected $dates = [
+        'date_from',
+        'date_to',
+        'created_at',
+        'updated_at',
+    ];
 }

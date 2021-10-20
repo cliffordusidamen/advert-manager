@@ -18,12 +18,12 @@ class AdvertCampaignResource extends JsonResource
         return [
             "id" => $this->id,
             "name" => $this->name,
-            "date_from" => Carbon::parse($this->date_from),
-            "date_to" => Carbon::parse($this->date_to),
+            "date_from" =>$this->date_from,
+            "date_to" =>$this->date_to,
             "daily_budget" => (double) $this->daily_budget,
             "total_budget" => (double) $this->total_budget,
-            "created_at" => Carbon::parse($this->created_at),
-            "updated_at" => Carbon::parse($this->updated_at),
+            "created_at" => $this->created_at,
+            "updated_at" => $this->updated_at,
         ];
     }
 }

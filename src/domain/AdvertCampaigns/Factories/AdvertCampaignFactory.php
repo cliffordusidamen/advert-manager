@@ -1,9 +1,9 @@
 <?php
 
-namespace Database\Factories;
+namespace Domain\AdvertCampaigns\Factories;
 
-use App\Models\AdvertCampaign;
 use Carbon\Carbon;
+use Domain\AdvertCampaigns\Models\AdvertCampaign;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class AdvertCampaignFactory extends Factory
@@ -29,7 +29,7 @@ class AdvertCampaignFactory extends Factory
         $dateFrom = Carbon::now()->add("{$campaignStartsInDays} days");
 
         return [
-            'name' => $this->faker->sentence(),
+            'name' => 'Sample title', // $this->faker->sentence(),
             'daily_budget' => $dailyBudget,
             'total_budget' => $totalBudget,
             'date_from' => $dateFrom->format('Y-m-d'),

@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\User;
+use Domain\AdvertCampaigns\Models\AdvertCampaign;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -43,5 +44,16 @@ class UserFactory extends Factory
                 'email_verified_at' => null,
             ];
         });
+    }
+
+    /**
+     * With advert campaigns
+     * 
+     * @param  int  $numberOfCampaigns
+     * @return static
+     */
+    public function withAdvertCampaigns(int $numberOfCampaigns = 1)
+    {
+        return $this->has(AdvertCampaign::factory()->count($numberOfCampaigns));
     }
 }

@@ -24,4 +24,5 @@ Route::resource('advert_campaigns', \App\Http\Controllers\AdvertCampaignControll
     'store',
     'edit',
     'update',
-]);
+])
+->middleware('auth:sanctum');

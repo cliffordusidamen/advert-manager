@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+use Domain\AdvertCampaigns\Models\AdvertCampaign;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -41,4 +43,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Has many advert collections
+     * 
+     * @return  \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function advertCampaigns(): HasMany
+    {
+        return $this->hasMany(AdvertCampaign::class, 'user_id');
+    }
 }

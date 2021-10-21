@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Http\Resources;
+namespace Domain\AdvertCampaigns\Resources;
 
-use Carbon\Carbon;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class AdvertCampaignResource extends JsonResource

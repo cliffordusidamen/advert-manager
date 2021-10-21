@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Resources;
+namespace Domain\AdvertCampaigns\Resources;
 
 use Illuminate\Http\Resources\Json\ResourceCollection;
 

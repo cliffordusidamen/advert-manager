@@ -2,20 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\AdvertCampaignCollection;
-use App\Models\AdvertCampaign;
+use Domain\AdvertCampaigns\Models\AdvertCampaign;
+use Domain\AdvertCampaigns\Resources\AdvertCampaignCollection;
 use Illuminate\Http\Request;
 
 class AdvertCampaignController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of all advert campaigns.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $advertCampaigns = AdvertCampaign::paginate();
+        $advertCampaigns = request()
+            ->user()
+            ->advertCampaigns()
+            ->paginate();
+
         return new AdvertCampaignCollection($advertCampaigns);
     }
 

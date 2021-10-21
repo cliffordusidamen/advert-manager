@@ -36,11 +36,23 @@ class ViewCampaignListingTest extends TestCase
                 $json->has("data.{$i}", fn ($json) => (
                     $json->where('id', $adCampaign->id)
                         ->where('name', $adCampaign->name)
-                        ->where('daily_budget', $adCampaign->daily_budget)
-                        ->where('total_budget', $adCampaign->total_budget)
+                        ->where('daily_budget', (double) $adCampaign->daily_budget)
+                        ->where('total_budget', (double) $adCampaign->total_budget)
                         ->etc()
                 ))
             ));
         });
+    }
+
+    /**
+     * @test
+     * @return void
+     */
+    public function canCreateNewAdvertCampaign()
+    {
+        // make a request to the endpoint for storing
+        // $response =
+        // ensure that there is a record in the database with the specified name of the inserted advert campaign
+        // check the uploaded files
     }
 }
